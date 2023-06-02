@@ -1,0 +1,39 @@
+<div class="jumbotron" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" id="2">
+  <h4 style="float: none; text-align: left;">Add Customer</h4>
+  <div class="row" style="border: solid 0.6px black;">
+      <div class="  col-sm-3 col-3"></div>
+      <div class=" col-5 col-sm-6" style="width: 120px;">
+          <div class="container" >
+            <form (ngSubmit)="addCustomer()" class="form-group">
+              <div>
+                <label class="form-label mt-4">Title<span style="color:red;">*</span>:</label>
+                <input class="form-control" type="text" [(ngModel)]="name" name="name" required>
+              </div>
+              <div>
+                <label class="form-label mt-4">Email<span style="color:red;">*</span>:</label>
+                <input class="form-control" type="email" [(ngModel)]="email" name="email" required>
+              </div>
+              <div>
+                <label class="form-label mt-4">Region<span style="color:red;">*</span>:</label>
+                <ngx-select class="form-select" [formControl]="selectControl" [(ngModel)]="region" name="region" [items]="regions" 
+                (select)="fetchCountries()" required>
+                    
+                </ngx-select>
+              </div>
+              <div>
+                <label class="form-label mt-4">Country<span style="color:red;">*</span>:</label>
+                <ngx-select class="form-select" [(ngModel)]="country" name="country" [items]="countries" required>
+                    
+                </ngx-select>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-secondary custom-margin">Create Customer</button>
+              </div>
+            </form>
+          </div>
+      </div>
+      <div class=" col-sm-3 col-3" style="width: 16px;"></div>
+  </div>
+  
+</div>
+  

@@ -1,0 +1,51 @@
+<div style="width: 100vm; height: 5vh;">
+    
+
+</div>
+  
+
+   
+
+<div class="container">
+
+    <div class="header clearfix">
+        <button class="btn btn-lg btn-success"  role="button" 
+            style="float: right; background-color: rgb(170, 170, 170); border-color: rgb(146, 146, 146); width: 180px; border-width: 0px;">+
+            Add Costumer</button>
+    </div>
+    <div class="header clearfix">
+        <button class="btn btn-lg btn-success"  role="button" 
+            style="float: right; background-color: rgb(170, 170, 170); border-color: rgb(170, 170, 170); min-width: 150px; width: 180px; border-width: 0px; margin-top: 10px;">+
+            Add Pin</button>
+    </div>
+
+    <div class="jumbotron" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" id="1">
+        <h4 style="float: left;">List of pins</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Image</th>
+                    <th class="text-center">Collaborators</th>
+                    <th class="text-center">Privacy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pin of pins">
+                    <td class="text-center">{{ pin.title }}</td>
+                    <td class="text-center"><img [src]="imgUrl" [alt]="imgUrl" width="50px" height="50px"/></td>
+                    <td class="text-center">
+                        <p *ngFor= " let p of pin.collaborators ">{{ p }}</p></td>
+                    <td class="text-center">{{ pin.privacy }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    
+    <app-customer></app-customer>
+    <app-pin></app-pin>
+
+
+
+</div>
